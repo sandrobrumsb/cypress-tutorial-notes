@@ -1,0 +1,33 @@
+
+Instalação:
+  Checar se o npm está instalado:		npm install pnpm@latest --global
+  Instalando o Cypress:			        npm install cypress --save-dev
+  Abrindo o aplicativo:			        npx cypress open
+
+Adicionando o comando cy:open no package.json:
+{
+  "scripts": {
+    "cy:open": "cypress open"
+  }
+}
+
+Instalando o npm para usar xpath:	  npm install -D cypress-xpath
+
+*apos instalar tem que inserir o código abaixo no arquivo support/e2e.js:
+import "./commands";
+require("cypress-xpath");
+
+Comandos:
+  Abrir o Cypress Launch:			    npm run cy:open
+  Verificar versao do Cypress:    npx cypress --version
+  Instalar a versao mais recente: npm install cypress@latest
+
+Configurações:
+  Rodando todos os testes no launcher do Cypress:
+  No arquivo cypress.config.js adicione dentro de module.exports:
+  e2e: {
+    experimentalRunAllSpecs: true,
+  },  
+
+  
+  
